@@ -1,0 +1,47 @@
+#include <kipr/botball.h>
+int l_motor = 0;
+int r_motor = 3;
+int speed = 75;
+int pause = 1000;
+int low_speed = 50;  
+
+int main()
+{
+    while(1){
+        //stuff I want to loop 
+        forward();
+        //look for a collision event
+        	if(digital(0)){//if a collision is detected...
+       			backward();
+                left();
+            }
+        	if(digital(4)){
+             	backward();
+                right();
+            }
+    }
+    printf("Hello World\n");
+    return 0;
+}
+
+//FUNCTION DEFINITIONS//
+void forward(){
+ 	motor(l_motor,speed);//go foward 
+    motor(r_motor,speed);   
+}
+void backward(){
+    motor(l_motor,-low_speed);
+    motor(r_motor,-low_speed);
+    msleep(1000);
+    ao();
+}
+void right(){
+    motor(l_motor,speed);
+    msleep(1500);
+    ao();
+}
+void left(){
+    motor(r_motor,speed);
+    msleep(1500);
+    ao();
+}
