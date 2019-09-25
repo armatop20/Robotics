@@ -5,7 +5,9 @@ int speed = 75;
 int pause = 1000;
 int low_speed = 50;  
 
-int main()
+//Patrick Armato & Ivan Mena
+
+int main() 
 {
     while(1){
         //stuff I want to loop 
