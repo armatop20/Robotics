@@ -33,12 +33,15 @@ int main()
         if (get_object_center_x(orange, 0)){
             set_servo_position(servo, get_object_center_x(orange,0) * 10);
         }
-        //if (get_object_center_x(green, 0) >= 80){
-        //    right();
-        //}
-        //if (get_object_center_x(green, 0) < 80){
-        //    left();
-        //}
+        if (get_object_center_x(green, 0) >= 80){
+            right();
+        }
+        if (get_object_center_x(green, 0) < 80){
+            left();
+        }
+        if (get_object_center_y(green, 0) < 10){
+            ao();
+        }
     }
     printf("Hello World\n");
     return 0;
